@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Overpass;
+            background-color: #f9ebc88d;
+            color: #644536;
+            text-align: center;
+            padding: 25px;
+          }
+            
+          h1, h2, h3 {
+            font-family: Chivo;
+            color: #0C0A3E;
+          }
+          
+          a {
+            text-decoration: none;
+            color: white;
+            background-color: #BA6E6E;
+            padding: 15px;
+            border-radius: 5px;
+            transition: 0.3s ease;
+          }
+          
+          a:hover {
+            background-color: #A36060;
+          }
+          
+          
+          div {
+            background-color:white;
+            padding:50px;
+            width:500px auto;
+            margin: 25px auto;
+            border-radius: 5px;
+            border: 1px solid #EAEAEA;
+            box-shadow: 0 0 16px rgba(0,0,0,0.1);
+          }
+    </style>
+    <title>Vowel Processing</title>
+</head>
+<body>
+    <div>
+    <script>
+        function processInput() {
+            let input = prompt("escribe algo para que salga en lenguaje de ballena:");
+            let vowels = ['a', 'e', 'i', 'o', 'u'];
+            let resultArray = [];
+
+            for (let i = 0; i < input.length; i++) {
+                for (let j = 0; j < vowels.length; j++) {
+                    if (input[i] === vowels[j]) {
+                        resultArray.push(input[i]);
+                        if (input[i] === 'e') {
+                            resultArray.push(input[i]);
+                            if (vowels[j] === 'u') {
+                                resultArray.push(vowels[j]);
+                            }
+                        }
+                    }
+                }
+            }
+
+            const resultString = resultArray.join('').toUpperCase();
+
+            console.log(resultString);
+
+            // Display result on the page
+            document.body.innerHTML += `<p>Original Input: ${input}</p>`;
+            document.body.innerHTML += `<p>Processed Result: ${resultString}</p>`;
+        }
+
+        // Run the processInput function when the page loads
+        window.onload = processInput;
+    </script>
+    </div>
+</body>
+</html>

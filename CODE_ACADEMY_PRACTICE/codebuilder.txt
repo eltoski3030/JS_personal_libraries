@@ -1,0 +1,12 @@
+age
+adultRunners = age >= 18
+youthRunners = age < 18
+
+adult runners number =  < 1000
+youthrunners number = > 1000
+
+adults start at  = 9:30 or 1100
+early adults run = 9:30
+late adults run at = 1100
+
+youthRunners = 1230
